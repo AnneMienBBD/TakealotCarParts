@@ -14,6 +14,7 @@ BEGIN
 	CREATE TABLE [dbo].[Vehicle](
 		[VehicleId] [int] IDENTITY(1,1) PRIMARY KEY,
 		[VehicleModel] [varchar](120) NOT NULL,
+		[VechicleYear] [varchar](4) NOT NULL,
 		[BrandId] [int] NOT NULL,
 		FOREIGN KEY(BrandId) REFERENCES VehicleBrand(BrandId)
 	);
