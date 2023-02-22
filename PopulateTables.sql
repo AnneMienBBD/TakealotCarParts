@@ -8,7 +8,7 @@ BEGIN
 	VALUES('Honda'), ('Toyota'), ('Suzuki'), ('Kia')
 
 	INSERT INTO Vehicle
-	VALUES('Amaze',1,'2020'), ('Etios',2,'2010'), ('Swift',3,'2019'), ('Picanto',4,'2020'), ('Ignis',3,'2019')
+	VALUES('Amaze','2020', 1), ('Etios','2010',2), ('Swift','2019',3), ('Picanto','2020',4), ('Ignis','2019',3)
 
 	INSERT INTO CarPart
 	VALUES ('1.5l N15A1 four-cylinder turbo-diesel', 1, 1, 24500, 30000),
