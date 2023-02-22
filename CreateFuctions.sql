@@ -29,7 +29,8 @@ RETURN
 	SELECT
 		CarPartOrder.CarPartId,
 		CarPartName,
-		CostPrice
+		CostPrice,
+		QuantityOrdered
 	FROM
 		CarPartOrder LEFT JOIN CarPart
 		ON CarPartOrder.CarPartId = CarPart.CarPartId
