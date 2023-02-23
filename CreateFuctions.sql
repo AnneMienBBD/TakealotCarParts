@@ -30,7 +30,8 @@ RETURN
 		CarPartOrder.CarPartId,
 		CarPartName,
 		RetailPrice,
-		QuantityOrdered
+		QuantityOrdered,
+		QuantityOrdered * RetailPrice as TotalPrice
 	FROM
 		CarPartOrder LEFT JOIN CarPart
 		ON CarPartOrder.CarPartId = CarPart.CarPartId
