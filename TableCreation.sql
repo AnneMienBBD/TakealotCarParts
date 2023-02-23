@@ -14,7 +14,7 @@ BEGIN
 	CREATE TABLE [dbo].[Vehicle](
 		[VehicleId] [int] IDENTITY(1,1) PRIMARY KEY,
 		[VehicleModel] [varchar](120) NOT NULL,
-		[VechicleYear] [varchar](4) NOT NULL,
+		[VehicleYear] [varchar](4) NOT NULL,
 		[BrandId] [int] NOT NULL,
 		FOREIGN KEY(BrandId) REFERENCES VehicleBrand(BrandId)
 	);
@@ -41,7 +41,7 @@ BEGIN
 	CREATE TABLE [dbo].[Scrapyard](
 		[ScrapyardId] [int] IDENTITY(1,1) PRIMARY KEY,
 		[ScrapyardName] [varchar](100) NOT NULL,
-		[Owner] [varchar](100) NOT NULL,
+		[ScrapyardOwner] [varchar](100) NOT NULL,
 		[PhoneNumber] [varchar](13) NOT NULL,
 		[Email] [varchar](50) NOT NULL,
 		[StreetAddress] [varchar](50) NOT NULL,
