@@ -55,7 +55,7 @@ RETURN
 		VehicleYear,
 		RetailPrice,
 		QuantityOrdered,
-		QuantityOrdered * RetailPrice as TotalPrice,
+		QuantityOrdered * RetailPrice as TotalPrice
 		
 	FROM
 		CarPartOrder LEFT JOIN (CarPart LEFT JOIN (Vehicle LEFT JOIN VehicleBrand
