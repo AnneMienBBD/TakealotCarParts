@@ -1,6 +1,3 @@
-USE CarPartTakealotDB;
-GO
-
 CREATE VIEW vPartOrders
 AS
 SELECT [CarPart].CarPartName, [VehicleBrand].BrandName, [Vehicle].VehicleModel, [Vehicle].VehicleYear,
