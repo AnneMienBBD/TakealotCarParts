@@ -25,11 +25,11 @@ BEGIN
 	('Rondebosch', '7701', 'Cape Town')
 
 	INSERT INTO Scrapyard
-	VALUES('Zoom zoom', 'Peter Thomasson', '0845642211', 'thomasson@gmail.com', '50 Cliffendale dr', null, 1),
-	('Vehicle Center', 'Randall Forest', '0872345543', 'forest@vehiclecenter.com', '67 Jacqueline dr', 'Old Farm Village', 2),
-	('John''s Scrapyard', 'John Webster', '0734446766', 'webster@gmail.com', '4 Anne road', null, 3),
-	('Scrappy', 'Pieter van der Merwe', '0732218965', 'pieter@scrappy.co.za', '6 Juta str', null, 4),
-	('Ultimate Scrapyard', 'Yvonne Marshall', '0629764553', 'marshall@ultimatescrapyard.co.za','89 Central road', null, 5)
+	VALUES('Zoom zoom', 'Peter Thomasson', '0845642211', 'thomasson@gmail.com', 'Cliffendale dr', null, 1, '23'),
+	('Vehicle Center', 'Randall Forest', '0872345543', 'forest@vehiclecenter.com', 'Jacqueline dr', 'Old Farm Village', 2, '45a'),
+	('John''s Scrapyard', 'John Webster', '0734446766', 'webster@gmail.com', 'Anne road', null, 3, '56'),
+	('Scrappy', 'Pieter van der Merwe', '0732218965', 'pieter@scrappy.co.za', 'Juta str', null, 4, '7'),
+	('Ultimate Scrapyard', 'Yvonne Marshall', '0629764553', 'marshall@ultimatescrapyard.co.za','Central road', null, 5, '120b')
 
 	INSERT INTO Acquisition
 	VALUES('2021-03-04',1),
@@ -42,11 +42,11 @@ BEGIN
 	VALUES (1,1,4), (1,2,10), (1,3,8), (1,4,6), (2,5,7), (2,3,15), (2,1,16), (3,1,25), (3,2,7), (3,3,6), (3,4,1), (3,5,3), (4,2,4), (4,5,8), (4,4,2), (5,3,1), (5,4,5), (5,1,6)
 
 	INSERT INTO Customer
-	VALUES('Johanna', 'van Rensburg', '0835672443', 'johannar@gmail.com', '27 Old Farm road', '5 Grand Villas', 1),
-	('Tiaan', 'Blohm', '0854327775', 'blohmies@gmail.com', '26 Garsfontein road', null, 2 ),
-	('Graham', 'Bell', '0723354672', 'bellg@yahoo.com', '3 Manitoba drive', null, 3),
-	('Susan', 'Steele', '0642337654', 'steeleworks@gmail.com', 'Ogilvie Thompson street', '8 Rayton Rich', 4),
-	('Kelly', 'Underwood', '0825447883', 'underwood@yahoo.com', '65 Melville dr', null, 5)
+	VALUES('Johanna', 'van Rensburg', '0835672443', 'johannar@gmail.com', 'Old Farm road', 'Grand Villas', 1, '88'),
+	('Tiaan', 'Blohm', '0854327775', 'blohmies@gmail.com', 'Garsfontein road', null, 2, '76' ),
+	('Graham', 'Bell', '0723354672', 'bellg@yahoo.com', 'Manitoba drive', null, 3, '6a'),
+	('Susan', 'Steele', '0642337654', 'steeleworks@gmail.com', 'Ogilvie Thompson street', 'Rayton Rich', 4, '78'),
+	('Kelly', 'Underwood', '0825447883', 'underwood@yahoo.com', 'Melville dr', null, 5, '104')
 
 	INSERT INTO Orders
 	VALUES('2023-02-04',1),
