@@ -25,8 +25,8 @@ BEGIN
 		[CarPartName] [varchar](120) NOT NULL,
 		[PartTypeId] [int] NOT NULL,
 		[VehicleId] [int] NOT NULL,
-		[CostPrice] [decimal](13,4) NOT NULL,
-		[RetailPrice] [decimal](13,4) NOT NULL,
+		[CostPrice] [decimal](13,2) NOT NULL,
+		[RetailPrice] [decimal](13,2) NOT NULL,
 		FOREIGN KEY(PartTypeId) REFERENCES PartType(PartTypeId),
 		FOREIGN KEY(VehicleId) REFERENCES Vehicle(VehicleId),
 	);
@@ -42,11 +42,12 @@ BEGIN
 		[ScrapyardId] [int] IDENTITY(1,1) PRIMARY KEY,
 		[ScrapyardName] [varchar](100) NOT NULL,
 		[ScrapyardOwner] [varchar](100) NOT NULL,
-		[PhoneNumber] [varchar](13) NOT NULL,
+		[PhoneNumber] [varchar](11) NOT NULL,
 		[Email] [varchar](50) NOT NULL,
-		[StreetAddress] [varchar](50) NOT NULL,
+		[StreetName] [varchar](50) NOT NULL,
 		[ApartmentBlock] [varchar](50) NULL,
 		[SuburbId] [int] NOT NULL,
+		[StreetNumber] [varchar](5),
 		FOREIGN KEY(SuburbId) REFERENCES Suburb(SuburbId),
 	);
 
@@ -70,11 +71,12 @@ BEGIN
 		[CustomerId] [int] IDENTITY(1,1) PRIMARY KEY,
 		[FirstName] [varchar](50) NOT NULL,
 		[LastName] [varchar](50) NOT NULL,
-		[PhoneNumber] [varchar](13) NOT NULL,
+		[PhoneNumber] [varchar](11) NOT NULL,
 		[Email] [varchar](50) NOT NULL,
-		[StreetAddress] [varchar](50) NOT NULL,
+		[StreetName] [varchar](50) NOT NULL,
 		[ApartmentBlock] [varchar](50) NULL,
 		[SuburbId] [int] NOT NULL,
+		[StreetNumber] [varchar](5),
 		FOREIGN KEY(SuburbId) REFERENCES Suburb(SuburbId),
 	);
 
