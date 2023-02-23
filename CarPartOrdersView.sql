@@ -5,7 +5,7 @@ CREATE VIEW vPartOrders
 AS
 SELECT [CarPart].CarPartName, [VehicleBrand].BrandName, [Vehicle].VehicleModel, [Vehicle].VehicleYear,
 	[CarPart].RetailPrice, [Customer].FirstName, [Customer].LastName, [Customer].PhoneNumber, [Customer].Email,[Suburb].SuburbName, [Suburb].City,
-	[Customer].StreetAddress, QuantityOrdered, [Orders].OrderDate
+	[Customer].StreetName, [Customer].StreetNumber, QuantityOrdered, [Orders].OrderDate
 
 FROM CarPartOrder RIGHT JOIN Orders 
 ON [CarPartOrder].OrderId = [Orders].OrderId
@@ -27,6 +27,6 @@ ON [Customer].SuburbId = [Suburb].SuburbId
 
 GROUP BY QuantityOrdered, [CarPart].CarPartName, [Customer].FirstName, [Customer].LastName, [CarPart].RetailPrice,
 	[Orders].OrderDate, [Vehicle].VehicleModel, [Vehicle].VehicleYear, [VehicleBrand].BrandName, [Customer].PhoneNumber,
-	[Customer].Email, [Suburb].SuburbName, [Suburb].City, [Customer].StreetAddress
+	[Customer].Email, [Suburb].SuburbName, [Suburb].City, [Customer].StreetName, [Customer].StreetNumber
 
 GO
