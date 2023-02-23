@@ -6,7 +6,7 @@ RETURNS [decimal]
 BEGIN
 	DECLARE @Cost decimal
 	
-	SELECT @Cost = SUM(QuantityOrdered * CostPrice)
+	SELECT @Cost = SUM(QuantityOrdered * RetailPrice)
 	FROM
 		CarPartOrder LEFT JOIN CarPart
 		ON CarPartOrder.CarPartId = CarPart.CarPartId
@@ -29,7 +29,7 @@ RETURN
 	SELECT
 		CarPartOrder.CarPartId,
 		CarPartName,
-		CostPrice,
+		RetailPrice,
 		QuantityOrdered
 	FROM
 		CarPartOrder LEFT JOIN CarPart
