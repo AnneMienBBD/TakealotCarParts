@@ -52,9 +52,11 @@ RETURN
 		CarPartName,
 		BrandName,
 		VehicleModel,
+		VehicleYear,
 		RetailPrice,
 		QuantityOrdered,
-		QuantityOrdered * RetailPrice as TotalPrice
+		QuantityOrdered * RetailPrice as TotalPrice,
+		
 	FROM
 		CarPartOrder LEFT JOIN (CarPart LEFT JOIN (Vehicle LEFT JOIN VehicleBrand
 		ON Vehicle.BrandId = VehicleBrand.BrandId)
@@ -77,9 +79,10 @@ RETURN
 		CarPartName,
 		BrandName,
 		VehicleModel,
-		RetailPrice,
+		VehicleYear,
+		CostPrice,
 		QuantityAcquired,
-		QuantityAcquired * RetailPrice as TotalPrice
+		QuantityAcquired * CostPrice as TotalPrice
 	FROM
 		CarPartAcquisition LEFT JOIN (CarPart LEFT JOIN (Vehicle LEFT JOIN VehicleBrand
 		ON Vehicle.BrandId = VehicleBrand.BrandId)
