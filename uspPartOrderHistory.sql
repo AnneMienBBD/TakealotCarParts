@@ -1,6 +1,3 @@
-USE CarPartTakealotDB;
-GO
-
 CREATE PROCEDURE [dbo].[uspPartOrdersHistory]
 AS
 SELECT [CarPart].CarPartName, [PartType].TypeName, [VehicleBrand].BrandName, [Vehicle].VehicleModel, [Vehicle].VehicleYear, SUM(QuantityAcquired) as TotalAcquired, SUM(QuantityOrdered) as TotalOrdered
