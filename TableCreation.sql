@@ -1,3 +1,12 @@
+Use master;
+GO
+
+CREATE DATABASE CarPartTakealotDB;
+GO;
+
+USE CarPartTakealotDB;
+GO;
+
 CREATE PROCEDURE [dbo].[uspCreateTables] AS
 BEGIN
 
