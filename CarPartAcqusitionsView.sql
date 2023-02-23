@@ -1,6 +1,3 @@
-USE CarPartTakealotDB;
-GO
-
 CREATE VIEW vCarPartAcquisition
 AS
 SELECT [Scrapyard].ScrapyardOwner, ScrapyardName, [Scrapyard].PhoneNumber, [Scrapyard].Email, [Suburb].SuburbName, 
