@@ -19,6 +19,27 @@ END
 
 GO
 
+CREATE FUNCTION [dbo].[udfTotalAcquisitionCost]
+(
+  @AcquisitionID int
+)
+RETURNS [decimal]
+BEGIN
+	DECLARE @Cost decimal
+	
+	SELECT @Cost = SUM(QuantityAcquired * RetailPrice)
+	FROM
+		CarPartAcquisition LEFT JOIN CarPart
+		ON CarPartAcquisition.CarPartId = CarPart.CarPartId
+	WHERE
+		CarPartAcquisition.AcquisitionId = @AcquisitionID
+	
+	RETURN @Cost
+
+END
+
+GO
+
 CREATE FUNCTION [dbo].[udfGetReceipt]
 (
   @OrderID int
@@ -27,15 +48,42 @@ RETURNS TABLE
 AS
 RETURN 
 	SELECT
-		CarPartOrder.CarPartId,
+		CarPartOrder.OrderId,
 		CarPartName,
+		BrandName,
+		VehicleModel,
 		RetailPrice,
 		QuantityOrdered,
 		QuantityOrdered * RetailPrice as TotalPrice
 	FROM
-		CarPartOrder LEFT JOIN CarPart
-		ON CarPartOrder.CarPartId = CarPart.CarPartId
+		CarPartOrder LEFT JOIN (CarPart LEFT JOIN (Vehicle LEFT JOIN VehicleBrand
+		ON Vehicle.BrandId = VehicleBrand.BrandId)
+		ON CarPart.VehicleId = Vehicle.VehicleId)
+		ON CarPartOrder.CarPartId = CarPart.VehicleId
 	WHERE
 		CarPartOrder.OrderId = @OrderID
 
 GO
+
+CREATE FUNCTION [dbo].[udfGetReceiptAcquisition]
+(
+	@AcquisitionID int
+)
+RETURNS TABLE
+AS
+RETURN
+	SELECT
+		CarPartAcquisition.AcquisitionID,
+		CarPartName,
+		BrandName,
+		VehicleModel,
+		RetailPrice,
+		QuantityAcquired,
+		QuantityAcquired * RetailPrice as TotalPrice
+	FROM
+		CarPartAcquisition LEFT JOIN (CarPart LEFT JOIN (Vehicle LEFT JOIN VehicleBrand
+		ON Vehicle.BrandId = VehicleBrand.BrandId)
+		ON CarPart.VehicleId = Vehicle.VehicleId)
+		ON CarPartAcquisition.CarPartId = CarPart.VehicleId
+	WHERE
+		CarPartAcquisition.AcquisitionId = @AcquisitionID
