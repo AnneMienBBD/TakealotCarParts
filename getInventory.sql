@@ -2,7 +2,7 @@
 CREATE PROCEDURE [dbo].[uspStockQuantity]
 AS
 BEGIN 
-  SELECT SUM(QuantityAcquired) - SUM(QuantityOrdered) AS 'Quantity in Inventory',CarPartName, BrandName, VehicleModel, TypeName
+  SELECT SUM(QuantityAcquired) - SUM(QuantityOrdered) AS 'Quantity in Inventory',CarPartName, BrandName, VehicleModel, TypeName, VehicleYear
   FROM CarPartAcquisition
   JOIN CarPart
   ON CarPartAcquisition.CarPartId = CarPart.CarPartId
@@ -14,7 +14,7 @@ BEGIN
   ON PartType.PartTypeId = CarPart.PartTypeId
   JOIN VehicleBrand
   ON VehicleBrand.BrandId = Vehicle.BrandId
-  GROUP BY CarPartName, TypeName, BrandName, VehicleModel
+  GROUP BY CarPartName, VehicleModel, BrandName, VehicleYear, TypeName
   END
   
 
