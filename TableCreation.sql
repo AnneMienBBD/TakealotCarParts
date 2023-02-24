@@ -2,13 +2,12 @@ Use master;
 GO
 
 CREATE DATABASE CarPartTakealotDB;
-GO;
+GO
 
 USE CarPartTakealotDB;
-GO;
+GO
 
-CREATE PROCEDURE [dbo].[uspCreateTables] AS
-BEGIN
+
 
 	CREATE TABLE [dbo].[PartType](
 		[PartTypeId] [int] IDENTITY(1,1) PRIMARY KEY,
@@ -104,6 +103,6 @@ BEGIN
 		FOREIGN KEY(OrderId) REFERENCES Orders(OrderId),
 		CONSTRAINT PK_CarPartOrder PRIMARY KEY(CarPartId, OrderId),
 	);
-END
+
 
 GO
