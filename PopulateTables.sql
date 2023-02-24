@@ -1,5 +1,4 @@
-CREATE PROCEDURE [dbo].[uspPopulateTables] AS
-BEGIN
+
 
 	INSERT INTO PartType
 	VALUES('engine'), ('bumper'), ('steering wheel'), ('battery'), ('brake')
@@ -59,4 +58,4 @@ BEGIN
 	INSERT INTO CarPartOrder
 	VALUES (1,1,1), (1,2,1), (1,3,1), (2,4,1), (2,5,1), (3,1,2), (3,4,1),(4,4,2), (4,2,1),(5,5,1), (5,1,3),(6,3,1),(6,1,1)
 
-END
+
